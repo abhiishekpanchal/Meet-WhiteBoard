@@ -41,12 +41,29 @@ body {
   background-color: #ffffff;
 }
 
-navbar .logo {
-  font-size: 28px;
-  color: #393e46;
-  font-weight: bold;
+navbar .logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 0 12%;
-  margin-top: 32px;
+  width: 100%;
+  height: 69.9px;
+}
+
+navbar .logo-container .logo-img {
+  height: 100%;
+  margin-top: 20px;
+}
+
+navbar .logo-container .date-time #current-time {
+  margin-top: 30px;
+  font-size: 30px;
+  color: #4ecca3;
+  font: bold;
+}
+
+navbar .logo-container .date-time #current-date {
+  font-size: 20px;
 }
 
 .main {
@@ -153,6 +170,7 @@ navbar .logo {
   background-color: #393e46;
   border-radius: 10px;
   object-fit: cover;
+  transform: scaleX(-1);
 }
 .main .video-cont .settings {
   margin: 0 auto;
@@ -168,6 +186,13 @@ navbar .logo {
   height: 40px;
   margin-right: 10px;
   color: white;
+  position: relative;
+}
+.main .video-cont .settings .device .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .main .video-cont .settings .device:hover {
   background-color: #393e46;
@@ -181,7 +206,15 @@ navbar .logo {
   height: 40px;
   margin-right: 10px;
   color: white;
+  position: relative;
 }
+.main .video-cont .settings .nodevice .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .main .video-cont .settings .nodevice:hover {
   background-color: #393e46;
   cursor: pointer;
@@ -496,6 +529,7 @@ navbar .logo {
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
+  transform: scaleX(-1);
 }
 .container-room .left-cont .video-cont-single .video-box .nametag {
   color: white;
@@ -546,6 +580,13 @@ navbar .logo {
   width: 40px;
   border-radius: 100px;
   transition: background-color 0.3s;
+  position: relative;
+}
+.container-room .left-cont .footer .utils .audio .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .container-room .left-cont .footer .utils .audio:hover {
   cursor: pointer;
@@ -561,22 +602,36 @@ navbar .logo {
   width: 40px;
   border-radius: 100px;
   transition: background-color 0.3s;
+  position: relative;
+}
+.container-room .left-cont .footer .utils .novideo .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .container-room .left-cont .footer .utils .novideo:hover {
   cursor: pointer;
   background-color: #393e46;
 }
 .container-room .left-cont .footer .utils .screenshare {
-  background-color: #d8d8d8;
+  background-color: #efeded;
   text-align: center;
   margin-left: 10px;
-  color: #393e46;
+  color: rgb(125, 125, 125);
   padding: 10px;
   height: 40px;
   width: 40px;
   border-radius: 100px;
   transition: background-color 0.3s;
   transition: color 0.3s;
+  position: relative;
+}
+.container-room .left-cont .footer .utils .screenshare .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .container-room .left-cont .footer .utils .screenshare:hover {
   cursor: pointer;
@@ -584,9 +639,9 @@ navbar .logo {
   background-color: #393e46;
 }
 .container-room .left-cont .footer .utils .board-icon {
-  background-color: #d8d8d8;
+  background-color: #d63434;
   text-align: center;
-  color: #393e46;
+  color: white;
   margin-left: 10px;
   padding: 10px;
   height: 40px;
@@ -594,6 +649,13 @@ navbar .logo {
   border-radius: 100px;
   transition: background-color 0.3s;
   transition: color 0.3s;
+  position: relative;
+}
+.container-room .left-cont .footer .utils .board-icon .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .container-room .left-cont .footer .utils .board-icon:hover {
   cursor: pointer;
@@ -601,7 +663,7 @@ navbar .logo {
   background-color: #393e46;
 }
 .container-room .left-cont .footer .utils .cutcall {
-  background-color: #cc4e4e;
+  background-color: #d63434;
   text-align: center;
   margin-left: 10px;
   color: white;
@@ -610,6 +672,13 @@ navbar .logo {
   width: 40px;
   border-radius: 100px;
   transition: background-color 0.3s;
+  position: relative;
+}
+.container-room .left-cont .footer .utils .cutcall .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .container-room .left-cont .footer .utils .cutcall:hover {
   cursor: pointer;
@@ -670,24 +739,18 @@ navbar .logo {
 }
 .container-room .right-cont .head-title {
   font-weight: bold;
-  color: #393e46;
-  background-color: #ffffff;
+  color: white;
+  background-color: #4ecca3;
   width: 100%;
   display: flex;
-  border-bottom: 2px solid #393e46;
 }
-.container-room .right-cont .head-title .chats,
-.container-room .right-cont .head-title .attendies {
+.container-room .right-cont .head-title .chats {
   padding: 10px;
-  padding-top: 20px;
+  padding-top: 15px;
   width: 100%;
   text-align: center;
   transition: background-color 0.5s;
-}
-.container-room .right-cont .head-title .chats:hover,
-.container-room .right-cont .head-title .attendies:hover {
-  background-color: #f8f8f8;
-  cursor: pointer;
+  box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.3);
 }
 .container-room .right-cont .chat-cont {
   background-color: #ffffff;
@@ -803,5 +866,78 @@ navbar .logo {
   visibility: visible;
   opacity: 0.8;
 }
+
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+/* Adjust font sizes for smaller screens */
+@media screen and (max-width: 768px) {
+  .main .create-join .text .head {
+    font-size: 24px;
+  }
+  .main .create-join .text .subtext {
+    font-size: 18px;
+  }
+  .main .create-join .createroom-butt,
+  .main .create-join .createroom-clicked {
+    font-size: 18px;
+  }
+}
+
+/* Adjust layout for smaller screens */
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0 5%;
+    margin-top: 10vh;
+  }
+  .main .create-join {
+    width: 100%;
+    margin-right: 0;
+  }
+  .main .video-cont {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Add touch-friendly styles */
+@media screen and (max-width: 768px) {
+  .main .create-join .createroom-butt,
+  .main .create-join .createroom-clicked {
+    padding: 12px 20px;
+  }
+}
+
+/* Adjust layout for very small screens */
+@media screen and (max-width: 480px) {
+  .main .create-join .text .head {
+    font-size: 20px;
+  }
+  .main .create-join .text .subtext {
+    font-size: 16px;
+  }
+}
+
+/* Adjust layout for navbar and logo */
+@media screen and (max-width: 768px) {
+  navbar .logo-container {
+    padding: 0 5%;
+  }
+  navbar .logo-container .logo-img {
+    height: 50px;
+    margin-top: 15px;
+  }
+  navbar .logo-container .date-time #current-time {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  navbar .logo-container .date-time #current-date {
+    font-size: 16px;
+  }
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

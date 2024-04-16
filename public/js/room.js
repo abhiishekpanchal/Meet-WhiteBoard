@@ -610,7 +610,7 @@ videoButt.addEventListener('click', () => {
         }
         videoButt.innerHTML = `<i class="fas fa-video-slash"></i>`;
         videoAllowed = 0;
-        videoButt.style.backgroundColor = "#b12c2c";
+        videoButt.style.backgroundColor = "#d63434";
 
         if (mystream) {
             mystream.getTracks().forEach(track => {
@@ -654,7 +654,7 @@ audioButt.addEventListener('click', () => {
         }
         audioButt.innerHTML = `<i class="fas fa-microphone-slash"></i>`;
         audioAllowed = 0;
-        audioButt.style.backgroundColor = "#b12c2c";
+        audioButt.style.backgroundColor = "#d63434";
         if (mystream) {
             mystream.getTracks().forEach(track => {
                 if (track.kind === 'audio')
@@ -713,10 +713,13 @@ whiteboardButt.addEventListener('click', () => {
     if (boardVisisble) {
         whiteboardCont.style.visibility = 'hidden';
         boardVisisble = false;
+        whiteboardButt.style.backgroundColor = "#d63434";
     }
     else {
         whiteboardCont.style.visibility = 'visible';
         boardVisisble = true;
+        whiteboardButt.style.backgroundColor = "#4ECCA3";
+        whiteboardButt.style.color = "white";
     }
 })
 
